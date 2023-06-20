@@ -28,12 +28,20 @@ function App() {
     char9,
     char10,
   ]);
+  const [checkArray, setcheckArray] = useState([]);
+
+  const charClick = (ch) => {
+    if (checkArray.length === 0) {
+      setcheckArray([ch]);
+    } else setcheckArray((checkchars) => [...checkchars, ch]);
+    console.log(checkArray.length);
+  };
 
   return (
     <div className="App">
       <Header pointScore={pointScore} highpointScore={highpointScore} />
       <div className="cardGrid">
-        <Card />
+        <Card charClick={charClick} />
         <Card />
         <Card />
         <Card />
