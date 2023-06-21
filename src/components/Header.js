@@ -7,8 +7,8 @@ const Header = (props) => {
       <div className="headerArea">
         <h1>Memory Game!</h1>
         <div>
-          <div>point = {pointScore}</div>
-          <div>high score = {highpointScore}</div>
+          <div>Points = {pointScore}</div>
+          <div>High Score = {highpointScore}</div>
         </div>
       </div>
     </div>

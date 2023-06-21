@@ -33,6 +33,7 @@ function App() {
   const charClick = (charac) => {
     if (checkArray.indexOf(charac) > -1) {
       setpointScore(0);
+      setcheckArray([]);
       if (pointScore > highpointScore) sethighpointScore(pointScore);
       return 0;
     }

@@ -1,6 +1,8 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 .headerArea{
-  color: red;
+  font-family: Pacifico, Arial;
+  font-weight: bold;
+  color:#F19953;
   padding: 30px;
   display: flex;
   justify-content: space-between;
@@ -8,11 +10,20 @@
 }
 
 body{
-  background-color: aquamarine;
+  background-color: #EDF7F6;
+}
+.card:hover{
+  transform: scale(1.05);
+  border-radius: 15%;
+  box-shadow: 0px 0px 24px #2660A4;
+  
 }
 
 .card{
+  border-radius: 15%;
+  transition: 0.5s;
   margin: 10px;
+  box-shadow: 0px 0px 5px black;
 }
 
 .cardGrid{
@@ -21,6 +32,7 @@ body{
   justify-content: space-between;
 }
 .card img{
+  display: block;
   height: 265px;
   width: 265px;
   border-radius: 15%;
