@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Card from './components/Card';
 import './App.css';
@@ -30,28 +30,28 @@ function App() {
   ]);
   const [checkArray, setcheckArray] = useState([]);
 
-  const charClick = (ch) => {
-    if (checkArray.length === 0) {
-      setcheckArray([ch]);
-    } else setcheckArray((checkchars) => [...checkchars, ch]);
-    console.log(checkArray.length);
+  const charClick = (charac) => {
+    if (checkArray.indexOf(charac) > -1) {
+      setpointScore(0);
+      if (pointScore > highpointScore) sethighpointScore(pointScore);
+      return 0;
+    }
+    setcheckArray((checkchars) => [...checkchars, charac]);
+    setpointScore(pointScore + 1);
   };
+
+  const cardScript = (x) => {
+    return <Card character={x} charClick={charClick} />;
+  };
+
+  useEffect(() => {
+    setcharArray(charArray.sort(() => Math.random() - 0.5));
+  }, [pointScore]);
 
   return (
     <div className="App">
       <Header pointScore={pointScore} highpointScore={highpointScore} />
-      <div className="cardGrid">
-        <Card charClick={charClick} />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
+      <div className="cardGrid">{charArray.map(cardScript)}</div>
     </div>
   );
 }

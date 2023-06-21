@@ -2,10 +2,10 @@ import React from 'react';
 import meep from '../images/meep.jpeg';
 
 const Card = (props) => {
-  const { charClick } = props;
+  const { charClick, character } = props;
   return (
-    <div className="card" onClick={charClick}>
-      <img src={meep} alt="" />
+    <div className="card" onClick={() => charClick(character)}>
+      <img src={character} alt="" />
     </div>
   );
 };
